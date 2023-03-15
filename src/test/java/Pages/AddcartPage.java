@@ -28,7 +28,7 @@ public class AddcartPage extends TestingBase {
 	
 	
 public CartPage addcart(String str1,String str2) {
-	wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+	wait=new WebDriverWait(driver, Duration.ofSeconds(30));
 	homebtn.click();
 	String typecat="//div/a[contains(text(),'"+str1+"')]";
 	 driver.findElement(By.xpath(typecat)).click();

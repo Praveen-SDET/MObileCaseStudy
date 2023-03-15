@@ -32,13 +32,15 @@ public class CartPage extends TestingBase {
 	
 	
 	public PlaceOrderPage deletelist() throws InterruptedException {
-		wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait=new WebDriverWait(driver, Duration.ofSeconds(40));
 		homebtn.click();
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
 		retocart.click();
 		List<WebElement> BefCart=driver.findElements(By.xpath("//td[2]"));
 		wait.until(ExpectedConditions.visibilityOfAllElements(BefCart));
-		delopt.click();
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(delopt)).click();
+		//delopt.click();
 		List<WebElement> AftCart=driver.findElements(By.xpath("//td[2]"));
 		
 		wait.until(ExpectedConditions.visibilityOfAllElements(AftCart));
@@ -67,7 +69,7 @@ public class CartPage extends TestingBase {
 //		else {
 //			System.out.println("Item is deleted");
 //		}
-		
+		Thread.sleep(2000);
 		return new PlaceOrderPage();
 		
 		

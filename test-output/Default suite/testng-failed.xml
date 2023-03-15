@@ -8,8 +8,6 @@
           <include name="login"/>
           <include name="setup"/>
           <include name="finishExtent"/>
-          <include name="del"/>
-          <include name="addingitemdata" invocation-numbers="1"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- testScripts.ExecutionClass -->

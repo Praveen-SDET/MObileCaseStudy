@@ -76,7 +76,7 @@ public class ExecutionClass extends TestingBase {
 	 itemsavail=new CartPage();
 	 itemsavail.deletelist();
  }
- @Test(priority=4)
+ @Test(priority=4,dependsOnMethods = "del")
  public void ordering() throws InterruptedException {
 	 extentTest=reports.createTest("ordering test");
 	 
