@@ -40,6 +40,7 @@ public class CartPage extends TestingBase {
 		wait.until(ExpectedConditions.visibilityOfAllElements(BefCart));
 		delopt.click();
 		List<WebElement> AftCart=driver.findElements(By.xpath("//td[2]"));
+		
 		wait.until(ExpectedConditions.visibilityOfAllElements(AftCart));
 		if(BefCart!=AftCart) {
 			Assert.assertTrue(true);
