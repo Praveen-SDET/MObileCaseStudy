@@ -18,7 +18,8 @@ public class SignInPage extends TestingBase{
 	@FindBy(id="loginpassword")
 	WebElement loginpwd;
 	//@FindBy(xpath ="(//div/button[@type='button'])[9]")
-	@FindBy(xpath="//div//button[contains(text(),'Log in')]")
+	//@FindBy(xpath="//div//button[contains(text(),'Log in')]")
+	@FindBy(xpath="//div//button[@onclick='logIn()']")
 	WebElement logbtn;
 	@FindBy(xpath="//a[contains(text(),'Home')]")
 	public WebElement homebtn;
@@ -31,14 +32,20 @@ public class SignInPage extends TestingBase{
 	}
   public AddcartPage SigninCret() throws InterruptedException {
 	  wait=new WebDriverWait(driver, Duration.ofSeconds(30));
-	  login.click();
 	  Thread.sleep(1000);
-	  driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
+//	  homebtn.click();
+//	  driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
+	//  login.click();
+	  wait.until(ExpectedConditions.elementToBeClickable(login)).click();
+//	  Thread.sleep(1000);
+	//  driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
 	//loginid.sendKeys(prop.getProperty("Username"));
-	loginid.sendKeys("Ramann");
+	  wait.until(ExpectedConditions.elementToBeClickable(loginid)).sendKeys("Ramann");
+//	loginid.sendKeys("Ramann");
 //	loginpwd.sendKeys(prop.getProperty("Password"));
-	loginpwd.sendKeys("Hanu");
-    Thread.sleep(2000);
+	  wait.until(ExpectedConditions.elementToBeClickable(loginpwd)).sendKeys("Hanu");
+//	loginpwd.sendKeys("Hanu");
+    Thread.sleep(1000);
     wait.until(ExpectedConditions.elementToBeClickable(logbtn)).click();
 //	logbtn.click();
 	homebtn.click();
