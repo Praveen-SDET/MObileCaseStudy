@@ -17,8 +17,8 @@ public class SignInPage extends TestingBase{
 	WebElement loginid;
 	@FindBy(id="loginpassword")
 	WebElement loginpwd;
-	@FindBy(xpath ="(//div/button[@type='button'])[9]")
-	//@FindBy(xpath="//a[contains(text(),'Log in')]")
+	//@FindBy(xpath ="(//div/button[@type='button'])[9]")
+	@FindBy(xpath="//div//button[contains(text(),'Log in')]")
 	WebElement logbtn;
 	@FindBy(xpath="//a[contains(text(),'Home')]")
 	public WebElement homebtn;
@@ -39,7 +39,8 @@ public class SignInPage extends TestingBase{
 //	loginpwd.sendKeys(prop.getProperty("Password"));
 	loginpwd.sendKeys("Hanu");
     Thread.sleep(2000);
-	logbtn.click();
+    wait.until(ExpectedConditions.elementToBeClickable(logbtn)).click();
+//	logbtn.click();
 	homebtn.click();
 	return new AddcartPage();
 	
