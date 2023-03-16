@@ -67,9 +67,9 @@ public class PurchasePage extends TestingBase {
 		year.sendKeys("2023");
 		pur.click();
 		
-//		wait.until(ExpectedConditions.textToBePresentInElement(conmsg, "Thank you for your purchase!"));
-//		boolean confirm=conmsg.isDisplayed();
-//		Assert.assertTrue(confirm);
+		wait.until(ExpectedConditions.textToBePresentInElement(conmsg, "Thank you for your purchase!"));
+		boolean confirm=conmsg.isDisplayed();
+		Assert.assertTrue(confirm);
 		wait.until(ExpectedConditions.elementToBeClickable(okbtn)).click();
 	//	okbtn.click();
 		
