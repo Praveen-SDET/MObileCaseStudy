@@ -11,8 +11,8 @@ import org.testng.Assert;
 
 import Base.TestingBase;
 
-public class PlaceOrderPage extends TestingBase {
-	public PlaceOrderPage() {
+public class PurchasePage extends TestingBase {
+	public PurchasePage() {
 		PageFactory.initElements(driver, this);
 	}
 	WebDriverWait wait;

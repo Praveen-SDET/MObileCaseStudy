@@ -19,9 +19,9 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
 import Base.TestingBase;
-import Pages.AddcartPage;
+import Pages.HomePage;
 import Pages.CartPage;
-import Pages.PlaceOrderPage;
+import Pages.PurchasePage;
 import Pages.SignInPage;
 import utility.utill;
 
@@ -31,9 +31,9 @@ public class ExecutionClass extends TestingBase {
 	ExtentTest extentTest;
 	
 	SignInPage sign;
-	AddcartPage cate;
+	HomePage cate;
 	CartPage itemsavail;
-	PlaceOrderPage pls;
+	PurchasePage pls;
 	
 	
 	@BeforeTest
@@ -67,7 +67,7 @@ public class ExecutionClass extends TestingBase {
  @Test(priority=2,dataProvider="readdata")
  public void addingitemdata(String typecat,String item) {
 	 extentTest=reports.createTest("Adding Item test");
-	 cate=new AddcartPage();
+	 cate=new HomePage();
 	 cate.addcart(typecat, item);
  }
  @Test(priority=3,dependsOnMethods ="addingitemdata")
@@ -80,7 +80,7 @@ public class ExecutionClass extends TestingBase {
  public void ordering() throws InterruptedException {
 	 extentTest=reports.createTest("ordering test");
 	 
-	 pls=new PlaceOrderPage();
+	 pls=new PurchasePage();
 	 pls.place();
  }
  @AfterTest

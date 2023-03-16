@@ -31,7 +31,7 @@ public class CartPage extends TestingBase {
 	WebElement price;
 	
 	
-	public PlaceOrderPage deletelist() throws InterruptedException {
+	public PurchasePage deletelist() throws InterruptedException {
 		wait=new WebDriverWait(driver, Duration.ofSeconds(40));
 		homebtn.click();
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -70,7 +70,7 @@ public class CartPage extends TestingBase {
 //			System.out.println("Item is deleted");
 //		}
 		Thread.sleep(2000);
-		return new PlaceOrderPage();
+		return new PurchasePage();
 		
 		
 		

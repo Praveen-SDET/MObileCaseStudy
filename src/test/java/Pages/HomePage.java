@@ -13,9 +13,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Base.TestingBase;
 
-public class AddcartPage extends TestingBase {
+public class HomePage extends TestingBase {
 	
-	public AddcartPage() {
+	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
 	WebDriverWait wait;
@@ -33,10 +33,11 @@ public CartPage addcart(String str1,String str2) {
 	homebtn.click();
 	wait.until(ExpectedConditions.visibilityOfAllElements(homebtn));
 	String typecat="//div/a[contains(text(),'"+str1+"')]";
-	 driver.findElement(By.xpath(typecat)).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath(typecat))).click();
+	// driver.findElement(By.xpath(typecat)).click();
 	 String item ="//a[contains(text(),'"+str2+"')]";
-	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath(item)));
-	 driver.findElement(By.xpath(item)).click();
+	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath(item))).click();
+//	 driver.findElement(By.xpath(item)).click();
 	 addcartbtn.click();
 	 wait.until(ExpectedConditions.alertIsPresent());
 	 Alert alert=driver.switchTo().alert();

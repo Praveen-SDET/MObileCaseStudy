@@ -30,26 +30,30 @@ public class SignInPage extends TestingBase{
 	public SignInPage() {
 		PageFactory.initElements(driver, this);
 	}
-  public AddcartPage SigninCret() throws InterruptedException {
+  public HomePage SigninCret() throws InterruptedException {
 	  wait=new WebDriverWait(driver, Duration.ofSeconds(30));
-	  Thread.sleep(1000);
+	  Thread.sleep(3000);
+	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 //	  homebtn.click();
 //	  driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
 	//  login.click();
 	  wait.until(ExpectedConditions.elementToBeClickable(login)).click();
-//	  Thread.sleep(1000);
+	  Thread.sleep(3000);
 	//  driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
 	//loginid.sendKeys(prop.getProperty("Username"));
 	  wait.until(ExpectedConditions.elementToBeClickable(loginid)).sendKeys("Ramann");
 //	loginid.sendKeys("Ramann");
 //	loginpwd.sendKeys(prop.getProperty("Password"));
+	  
 	  wait.until(ExpectedConditions.elementToBeClickable(loginpwd)).sendKeys("Hanu");
 //	loginpwd.sendKeys("Hanu");
-    Thread.sleep(1000);
+	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+	  Thread.sleep(3000);
     wait.until(ExpectedConditions.elementToBeClickable(logbtn)).click();
 //	logbtn.click();
+    Thread.sleep(3000);
 	homebtn.click();
-	return new AddcartPage();
+	return new HomePage();
 	
 	
 	
